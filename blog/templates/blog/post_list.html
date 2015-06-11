@@ -2,18 +2,21 @@
 
 <html>
     <head>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static "css/blog.css" %}">
         <title>Me2</title>
     </head>
     <body>
-        <div>
-		<img src="{% static "blog/logo3.jpg" %}" alt="Me2 logo" height = "150" width = "150"/>
+        <div align="middle">
+		<img src="{% static "blog/logo3.jpg" %}" alt="Me2 logo" align="middle" height = "150" width = "150"/>
         </div>
 
        {% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
+    <div align="middle">
         <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaks }}</p>
+	<p>{{ post.published_date }}</p>        
+	<!--<p>{{ post.text|linebreaks }}</p>-->
     </div>
        {% endfor %}
     </body>
